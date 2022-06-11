@@ -105,9 +105,11 @@ describe("Create Statement", () => {
 
   it("should be not able to create a statement without an user authenticated", async () => {
     expect(async () => {
-      await authenticateUserUseCase.execute({
-        email: "user@test.com",
-        password: "12345"
+      await createStatementUseCase.execute({
+        amount: 50,
+        description: "Deposit test",
+        type: "deposit" as any,
+        user_id: "id_teste"
       });
     }).rejects.toBeInstanceOf(AppError);
   });

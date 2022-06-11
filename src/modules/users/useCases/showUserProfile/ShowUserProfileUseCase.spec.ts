@@ -45,10 +45,7 @@ describe("Show User Profile", () => {
 
   it("should be not able to show informations of an noexistent user", async () => {
     expect(async () => {
-      await authenticateUserUseCase.execute({
-        email: "user@test.com",
-        password: "12345"
-      });
+      await showUserProfileUseCase.execute("id_teste");
     }).rejects.toBeInstanceOf(AppError);
   });
 })
