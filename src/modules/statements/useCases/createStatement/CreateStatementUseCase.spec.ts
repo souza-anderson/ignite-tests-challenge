@@ -79,7 +79,7 @@ describe("Create Statement", () => {
     expect(statement).toHaveProperty("id");
   });
 
-  it("should be not able to create a statement with insufficient funds", async () => {
+  it("should be not able to create a withdraw statement with insufficient funds", async () => {
     await createUserUseCase.execute({
       email: "user@test.com",
       name: "test",
