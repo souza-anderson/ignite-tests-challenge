@@ -84,8 +84,6 @@ describe("Get Statement Operation", () => {
         Authorization: `Bearer ${token}`
       });
 
-    console.log(response.body);
-
     expect(response.status).toBe(404);
   });
 
