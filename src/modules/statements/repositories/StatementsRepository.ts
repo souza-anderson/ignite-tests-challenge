@@ -4,6 +4,7 @@ import { Statement } from "../entities/Statement";
 import { ICreateStatementDTO } from "../useCases/createStatement/ICreateStatementDTO";
 import { IGetBalanceDTO } from "../useCases/getBalance/IGetBalanceDTO";
 import { IGetStatementOperationDTO } from "../useCases/getStatementOperation/IGetStatementOperationDTO";
+import { ITransferStatementDTO } from "../useCases/transferStatement/ITransferStatementDTO";
 import { IStatementsRepository } from "./IStatementsRepository";
 
 export class StatementsRepository implements IStatementsRepository {
@@ -12,6 +13,7 @@ export class StatementsRepository implements IStatementsRepository {
   constructor() {
     this.repository = getRepository(Statement);
   }
+
 
   async create({
     user_id,
